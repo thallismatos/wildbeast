@@ -1,0 +1,31 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+
+  @include respond-to(mobile) {
+    padding: 0.75rem 1rem;
+  }
+}
+
+.button {
+  @include font-clamp(large);
+  display: inline-block;
+  background: $primary;
+  color: $c1;
+  border: none;
+  border-radius: $border-radius;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: uppercase;
+  margin: $margin auto;
+  text-align: center;
+
+  &:hover {
+    background-color: ajust($primary, 10%);
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "wildbeast",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.html",
   "dependencies": {
@@ -20,7 +20,11 @@
     "to-regex-range": "^5.0.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf src/styles/style.css",
+    "build": "sass src/styles/style.scss src/styles/style.css --style=compressed",
+    "watch": "sass --watch src/styles/style.scss src/styles/style.css",
+    "build-and-watch": "npm run build && npm run watch"
   },
   "keywords": [],
   "author": "Thallis Matos",

@@ -54,3 +54,7 @@
     transform: scale(1.05);
   }
 }
+
+.text {
+  @include font-clamp(medium);
+}

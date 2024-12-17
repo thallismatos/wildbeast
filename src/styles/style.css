@@ -158,7 +158,7 @@ img {
   grid-template-columns: minmax(160px, 1fr) 3fr minmax(250px, 1fr);
   grid-template-areas: "header header header" "sidenav content advertisements" "footer footer footer";
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   .grid-structure {
     grid-template-areas: "header header header" "sidenav content content" "sidenav advertisements advertisements" "footer footer footer";
   }
@@ -196,6 +196,10 @@ img {
 }
 .button:hover {
   transform: scale(1.05);
+}
+
+.text {
+  font-size: clamp(1rem, 2.1vw, 1.25rem);
 }
 
 .header {
@@ -248,7 +252,7 @@ img {
   padding: 1.2rem;
   width: 100%;
   aspect-ratio: 1/1;
-  box-shadow: 0.25rem 1rem 1rem rgba(0, 0, 0, 0.05);
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.05);
   border-radius: 0.25rem;
   max-width: 120px;
   min-height: 60px;
@@ -267,6 +271,134 @@ img {
   grid-area: content;
 }
 
+.header-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.header-main .title-text .title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #8844ee;
+  line-height: 1;
+}
+.header-main .title-text .subtitle {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: #8844ee;
+  font-style: italic;
+}
+.header-main .stats {
+  display: flex;
+  gap: 1rem;
+}
+.header-main .stats .stat-card {
+  background: linear-gradient(90deg, #8844ee, #b07dfb);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+  width: 100px;
+  text-align: center;
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.05);
+}
+.header-main .stats .stat-card .stat-number {
+  padding: 1rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+.header-main .stats .stat-card .stat-label {
+  font-size: clamp(1rem, 2.1vw, 1.25rem);
+  background: #f5f7fa;
+  padding: 0.5rem 0;
+  width: 100%;
+  height: 100%;
+}
+
+.img-text {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+.img-text .text {
+  grid-column: 1/-1;
+}
+.img-text .content-intro {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.img-text .content-intro .content-right {
+  display: grid;
+  gap: 1rem;
+}
+.img-text .content-intro .content-right img {
+  width: 100%;
+  grid-row: span 2;
+}
+.img-text .content-intro .content-left {
+  display: grid;
+  gap: 1rem;
+}
+.img-text .content-intro .content-left .text-details {
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  color: #8844ee;
+  font-style: italic;
+  max-width: 300px;
+}
+.img-text .content-intro .content-left img {
+  width: 100%;
+  align-self: end;
+}
+
+.additional-info {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+.additional-info .quote {
+  grid-column: 1/-1;
+  font-size: clamp(1rem, 2.1vw, 1.25rem);
+  background: linear-gradient(90deg, #8844ee, #b07dfb);
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.05);
+  border-radius: 0.25rem;
+  padding: 2rem;
+  font-style: italic;
+  text-align: center;
+  color: #f5f7fa;
+}
+.additional-info .quote p {
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+.additional-info .details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.additional-info .details .attributes-list {
+  font-size: clamp(1rem, 2.1vw, 1.25rem);
+  background: linear-gradient(90deg, #8844ee, #b07dfb);
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.05);
+  border-radius: 0.25rem;
+  padding: 2rem;
+  color: #f5f7fa;
+}
+.additional-info .details .attributes-list li {
+  border-bottom: 1px solid #f5f7fa;
+  padding: 1rem;
+}
+.additional-info .details .description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+.additional-info img {
+  grid-column: 1/-1;
+  width: 100%;
+}
+
 .advertisements {
   grid-area: advertisements;
   background: #f5f7fa;
@@ -276,7 +408,7 @@ img {
   align-content: flex-start;
   gap: 0.625rem;
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   .advertisements .item-ads {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }

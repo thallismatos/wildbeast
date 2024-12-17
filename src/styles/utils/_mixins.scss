@@ -12,7 +12,7 @@
   } @else if $size == x-large {
     font-size: clamp(1.5rem, 3vw, 2rem);
   } @else if $size == xx-large {
-    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-size: clamp(2rem, 4vw, 3rem);
   } @else {
     @warn "Tamanho não definido! Use: x-small, small, medium, large, x-large, ou xx-large.";
   }
@@ -24,7 +24,7 @@
       @content;
     }
   } @else if $breakpoint == tablet {
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media (min-width: 768px) and (max-width: 1200px) {
       @content;
     }
   }

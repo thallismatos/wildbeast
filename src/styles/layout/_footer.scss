@@ -3,4 +3,8 @@
 
 .footer {
   grid-area: footer;
+  @include font-clamp(medium);
+  background: linear-gradient(135deg, $primary, $secondary);
+  color: $c1;
+  text-align: center;
 }

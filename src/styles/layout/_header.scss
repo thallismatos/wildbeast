@@ -3,4 +3,28 @@
 
 .header {
   grid-area: header;
+  background: linear-gradient(135deg, $primary, $secondary);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    max-width: 200px;
+    height: auto;
+    align-self: center;
+  }
+
+  .list-menu {
+    width: 0%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 1rem;
+    color: $c1;
+  }
 }

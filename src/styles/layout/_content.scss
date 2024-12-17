@@ -28,7 +28,7 @@
     gap: 1rem;
 
     .stat-card {
-      background: linear-gradient(90deg, $primary, $secondary);
+      background: $gradient;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -103,7 +103,7 @@
   .quote {
     grid-column: 1 / -1;
     @include font-clamp(medium);
-    background: linear-gradient(90deg, $primary, $secondary);
+    background: $gradient;
     box-shadow: $shadow;
     border-radius: $radius;
     padding: 2rem;
@@ -125,7 +125,7 @@
 
     .attributes-list {
       @include font-clamp(medium);
-      background: linear-gradient(90deg, $primary, $secondary);
+      background: $gradient;
       box-shadow: $shadow;
       border-radius: $radius;
       padding: 2rem;

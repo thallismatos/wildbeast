@@ -3,36 +3,54 @@
 
 .grid-structure {
   display: grid;
-  grid-template-columns: minmax(160px, 1fr) 3fr 300px;
-  grid-template-areas: "header header header"
-  "sidenav content advertisements"
-  "footer footer footer";
+  grid-template-columns: minmax(160px, 1fr) 3fr minmax(250px, 1fr);
+  grid-template-areas:
+    "header header header"
+    "sidenav content advertisements"
+    "footer footer footer";
+
+  @include respond-to(tablet) {
+    grid-template-areas:
+      "header header header"
+      "sidenav content content"
+      "sidenav advertisements advertisements"
+      "footer footer footer";
+  }
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidenav"
+      "content"
+      "advertisements"
+      "footer";
+  }
 }
 
 .container {
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
 
   @include respond-to(mobile) {
-    padding: 1rem;
+    padding: 1.25rem 1rem;
   }
 }
 
 .button {
-  @include font-clamp(large);
-  display: inline-block;
+  @include font-clamp(medium);
+  display: block;
   background: $primary;
   color: $c1;
   border: none;
-  border-radius: $border-radius;
+  border-radius: $radius;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
-  text-transform: uppercase;
   margin: $margin auto;
   text-align: center;
+  transition: 0.3s ease, transform 0.3s ease;
 
   &:hover {
-    background-color: ajust($primary, 10%);
+    transform: scale(1.05);
   }
 }
